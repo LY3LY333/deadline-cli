@@ -1,7 +1,7 @@
 {
   "name": "deadline-cli",
   "version": "0.1.0",
-  "description": "Track assignment and exam deadlines from the terminal and export them to .ics so they land in your phone calendar.",
+  "description": "Homework and exam deadline tracker CLI that exports .ics to your phone calendar. Zero dependencies.",
   "type": "module",
   "bin": {
     "ddl": "bin/ddl.js",
@@ -26,13 +26,16 @@
   },
   "keywords": [
     "deadline",
+    "deadline-tracker",
+    "homework",
+    "student",
+    "assignment",
     "ics",
     "icalendar",
     "calendar",
-    "cli",
     "todo",
-    "student",
-    "zero-dependency"
+    "cli",
+    "nodejs"
   ],
   "license": "MIT",
   "repository": {

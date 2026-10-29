@@ -20,16 +20,14 @@
 ## 安装
 
 ```bash
-# 直接用，不用装
-npx deadline-cli list
-
-# 或者克隆下来
 git clone https://github.com/LY3LY333/deadline-cli.git
 cd deadline-cli
 node bin/ddl.js list
 ```
 
 要求 Node.js ≥ 18.17。没有任何第三方依赖。
+
+> 尚未发布到 npm，所以暂时不能用 `npx deadline-cli`。下文命令里的 `ddl` 都指 `node bin/ddl.js`，也可以 `npm link` 后用命令名。
 
 ## 快速开始
 
