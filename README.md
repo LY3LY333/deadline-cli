@@ -1,6 +1,7 @@
 # deadline-cli
 
 [![CI](https://github.com/LY3LY333/deadline-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/LY3LY333/deadline-cli/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/deadline-cli.svg)](https://www.npmjs.com/package/deadline-cli)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%E2%89%A518.17-brightgreen.svg)](package.json)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](package.json)
@@ -20,14 +21,17 @@
 ## 安装
 
 ```bash
+npx deadline-cli list        # 直接用，不用安装
+
+# 或者克隆下来
 git clone https://github.com/LY3LY333/deadline-cli.git
 cd deadline-cli
 node bin/ddl.js list
 ```
 
-要求 Node.js ≥ 18.17。没有任何第三方依赖。
+要求 Node.js ≥ 18.17。没有任何第三方依赖。已发布到 npm：<https://www.npmjs.com/package/deadline-cli>
 
-> 尚未发布到 npm，所以暂时不能用 `npx deadline-cli`。下文命令里的 `ddl` 都指 `node bin/ddl.js`，也可以 `npm link` 后用命令名。
+> 下文命令里的 `ddl` 指 `npx deadline-cli`（克隆后用 `node bin/ddl.js`；`npm link` 后可直接用 `ddl`）。
 
 ## 快速开始
 
