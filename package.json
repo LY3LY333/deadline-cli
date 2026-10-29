@@ -1,0 +1,46 @@
+{
+  "name": "deadline-cli",
+  "version": "0.1.0",
+  "description": "Track assignment and exam deadlines from the terminal and export them to .ics so they land in your phone calendar.",
+  "type": "module",
+  "bin": {
+    "ddl": "bin/ddl.js",
+    "deadline-cli": "bin/ddl.js"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./ics": "./src/ics.js",
+    "./due": "./src/due.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "deadline",
+    "ics",
+    "icalendar",
+    "calendar",
+    "cli",
+    "todo",
+    "student",
+    "zero-dependency"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LY3LY333/deadline-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LY3LY333/deadline-cli/issues"
+  },
+  "homepage": "https://github.com/LY3LY333/deadline-cli#readme"
+}

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: node ${{ matrix.node }} (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['18', '20', '22']
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Syntax check
+        run: |
+          node --check bin/ddl.js
+          node --check src/cli.js
+          node --check src/due.js
+          node --check src/ics.js
+          node --check src/store.js
+      - name: Unit tests
+        run: node --test
+      - name: Smoke test the CLI
+        shell: bash
+        run: |
+          export DEADLINE_CLI_FILE="$RUNNER_TEMP/deadlines.dd"
+          node bin/ddl.js init
+          node bin/ddl.js add "smoke test" --due "+1d" --course CI --type other
+          node bin/ddl.js list
+          node bin/ddl.js export --out "$RUNNER_TEMP/out.ics"
+          grep -q "BEGIN:VEVENT" "$RUNNER_TEMP/out.ics"
